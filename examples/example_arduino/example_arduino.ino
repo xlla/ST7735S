@@ -1,4 +1,4 @@
-﻿#include "st7735s.h"
+#include "st7735s.h"
 #include "fonts.h"
 #include "gfx.h"
 #include "Arduino.h"
@@ -13,6 +13,7 @@ void example(void)   {
         if (f) {
             setColor(0,0,0);
             fillScreen();
+            delay(1000);
         } else  {
 
             uint8_t r = 0, g = 0, b = 0;
@@ -24,24 +25,29 @@ void example(void)   {
                     g = (x+y) % 64;
                     b = y % 32;
                 }
+             delay(1000);
         }
 
         for (int i = 0; i < 32; i++) {
             setColor(i,i,i);
             drawLine(0,i,WIDTH-1,i);
         }
+        delay(1000);
         setColor(31,63,31);
         setbgColor(0,0,0);
         setFont(ter_u16b);
         drawText(4,33, "Hi World!");
+        delay(1000);
         for (int i = 0; i < 64; i++) {
             setColor(i/2,63-i,i/2);
             drawLine(WIDTH-1-i,0,WIDTH-1-i,HEIGHT-1);
         }
+        delay(1000);
         for (int i = 0; i < 64; i++) {
             setColor(i/2,i,i/2);
             drawLine(0,HEIGHT-1-i,WIDTH-1,HEIGHT-1-i);
         }
+        delay(1000);
 
         setColor(10,20,30);
         drawCircle(80, 50, 30);
@@ -53,13 +59,13 @@ void example(void)   {
         drawLine(0,0,WIDTH-1,HEIGHT-1);
 
         flushBuffer();
-
+        delay(1000);
     }
 }
 
 void setup(void) {
     ST7735S_Init();
-    setOrientation(R0);
+    setOrientation(R180);
 
 }
 
