@@ -3,12 +3,12 @@
 #include "st7735s_compat.h"
 #include "ASettings.h"
 
-#define CS_PIN    0
-#define RES_PIN   0
-#define DC_PIN    0
-#define MOSI_PIN  0
-#define SCK_PIN   0
-#define BLK_PIN    0
+#define CS_PIN    OLED_CS
+#define RES_PIN   OLED_RESET
+#define DC_PIN    OLED_DC
+#define MOSI_PIN  OLED_MOSI
+#define SCK_PIN   OLED_CLK
+#define BLK_PIN    OLED_BACKLIGHT
 
 void SPI_Init(void) {
     pinMode(CS_PIN, OUTPUT);
