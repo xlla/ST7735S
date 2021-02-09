@@ -1,6 +1,7 @@
 #include <Arduino.h>
-#include <SPI.h>
+#include "SPI.h"
 #include "st7735s_compat.h"
+#include "ASettings.h"
 
 #define CS_PIN    0
 #define RES_PIN   0
